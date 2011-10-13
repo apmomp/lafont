@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+body{
+  background: #000;
+  color: orange;
+  font-size: 75%;
+}
+
+.container {
+  /*width: 710px;*/
+  
+}
+header {
+  padding-top: 20px;
+}
+header img {
+  padding: 1em;
+  background: #222;
+}
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #222;
+  float: left;
+}
+section h1 {
+  font-size: 2em;
+  text-shadow: -1px 1px #888888;
+}
+/* Links */
+a {
+  color: #09c;
+  text-decoration: none;
+}
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+a:visited {
+  color: #069;
+}
+/* Navigation */
+nav {
+float: right;
+}
+nav {
+  background-color: #222;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+nav ul li a:visited {
+  color: #09c;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+/* Round corners */
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Food Categories */
+.foodcat{
+  background: #000;
+  
+}
+.foodcat td, h2{
+  /*float: left;*/
+ padding-left: 1em;
+ padding-right: 1em; 
+}
+
+.column {
+  width: 28%;
+  margin-right: 2%;
+  float: left;
+  margin-bottom: 2em;
+}
+
+div.float{
+  float: left;
+}
+
+td.fname {
+  width: 16em;
+}
+
+td.fdesc {
+  width: 20em;
+  color: #ccc;
+  font-size: 90%;
+}
+
+td.fprice {
+  width: 8em;
+  text-align: right;
+}
+
+div.foodcat{
+  width: 100%;
+  margin-bottom: 2em;
+  padding-left: 0.5em; 
+  padding-bottom: 1em;
+}
+
+div.food{
+  margin-bottom: 0.5em;
+}
+
+div.fname{
+  width: 75%;
+}
+
+div.fprice{
+  width: 25%;
+}
+
+div.fdesc{
+  width: 100%;
+  color: #ccc;
+  font-size: 90%;
+}

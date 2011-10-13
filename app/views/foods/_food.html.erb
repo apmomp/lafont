@@ -1,0 +1,14 @@
+<div class="food">
+  <div>
+    <div class="fname float">
+      <%= food.name %>
+    </div>
+
+    <div class="fprice float">
+      <%= number_with_precision(food.price, :precision => 2)  %> &euro;
+    </div>
+  </div>
+  <div class="fdesc">
+    <%= food.desc  %>
+  </div>
+</div>

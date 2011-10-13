@@ -1,0 +1,19 @@
+class Food < ActiveRecord::Base 
+  attr_accessible :name, :desc, :price
+
+  belongs_to :food_cat
+
+  default_scope :order => :name
+
+  validates :name,   :presence => true,
+                     :length => { :within => 2..32 },
+                     :uniqueness => { :case_sensitive => true }
+
+  validates :desc,   :length => { :maximum => 255 }
+
+  validates :price,  :presence => true,
+                     :format => { :with => /^\d+??(?:\.\d{0,2})?$/ },
+                     :numericality => {:greater_than => 0, :less_than => 200}
+
+
+end
