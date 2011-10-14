@@ -1,0 +1,8 @@
+.food
+  .fname.float
+    = food.name
+  .fprice.float
+    = number_with_precision(food.price, :precision => 2) + "€"
+.fdesc
+  = food.desc
+    

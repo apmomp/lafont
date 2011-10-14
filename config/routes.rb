@@ -3,8 +3,10 @@ Lafont::Application.routes.draw do
   get 'pages/home'
 
   root :to => 'pages#home'
-  
-  resources :menu, :only => [:index]
+
+  resources :menu, :only => :index
+ 
+  resources :food_cat, :only => :show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

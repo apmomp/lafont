@@ -1,7 +1,11 @@
 class MenuController < ApplicationController
   def index
     @title = "Menu"
-    @foodcats = FoodCat.all
-    @iterator = 0
+    if params[:section].nil?
+      @foodcats = FoodCat.all
+    else
+      @foodcats = FoodCat.where("food_cat_section_id = ?", params[:section])
+    end
+
   end
 end

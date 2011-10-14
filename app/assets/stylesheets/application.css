@@ -8,12 +8,12 @@
 
 body{
   background: #000;
-  color: orange;
+  color: gold;
   font-size: 75%;
 }
 
 .container {
-  /*width: 710px;*/
+  width: 750px;
   
 }
 header {
@@ -26,9 +26,10 @@ header img {
 section {
   margin-top: 1em;
   font-size: 120%;
-  padding: 20px;
+  padding: 1em;
   background: #222;
   float: left;
+  width: 750px;
 }
 section h1 {
   font-size: 2em;
@@ -74,6 +75,11 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+li.csection {
+  bakground: #000;
+  font-color: gold;
+}
 /* Round corners */
 .round {
   -moz-border-radius: 10px;
@@ -93,8 +99,9 @@ nav ul li a:hover {
 }
 
 .column {
-  width: 28%;
-  margin-right: 2%;
+  width: 30%;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
   float: left;
   margin-bottom: 2em;
 }
@@ -103,25 +110,11 @@ div.float{
   float: left;
 }
 
-td.fname {
-  width: 16em;
-}
-
-td.fdesc {
-  width: 20em;
-  color: #ccc;
-  font-size: 90%;
-}
-
-td.fprice {
-  width: 8em;
-  text-align: right;
-}
-
 div.foodcat{
   width: 100%;
   margin-bottom: 2em;
   padding-left: 0.5em; 
+  padding-right: 0.5em;
   padding-bottom: 1em;
 }
 
@@ -135,10 +128,11 @@ div.fname{
 
 div.fprice{
   width: 25%;
+  text-align: right;
 }
 
 div.fdesc{
-  width: 100%;
+  width: 75%;
   color: #ccc;
   font-size: 90%;
 }
