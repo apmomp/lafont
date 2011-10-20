@@ -1,4 +1,7 @@
 .round.foodcat.float
   %h2
-    = link_to food_cat.name, food_cat_path(food_cat.id)
+    = food_cat.name
+    %span
+      = link_to "[Editar]", edit_food_cat_path(food_cat.id)
+
   = render food_cat.foods

@@ -1,0 +1,25 @@
+.round.column2.form_black
+  %h2
+    Añadir alimento
+  - cat_id = (params[:id]) ? params[:id] : params[:food_cat_id]
+  = form_for [FoodCat.find_by_id(cat_id), @food] do |f|
+    = render 'shared/error_messages', :object => f.object
+    .field
+      .flabel
+        = f.label :nombre
+      .ffield
+      = f.text_field :name
+    .field
+      .flabel
+        = f.label :descripción
+      .ffield
+        = f.text_field :desc
+    .field
+      .flabel
+        = f.label :precio
+      .ffield
+        = f.text_field :price, :size => 5, :maxlength => 5
+    .actions
+      = f.submit "Añadir"
+.round.column2
+  = render @cat

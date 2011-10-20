@@ -1,7 +1,7 @@
 class Food < ActiveRecord::Base 
-  attr_accessible :name, :desc, :price
+  attr_accessible :name, :desc, :price, :cat_id
 
-  belongs_to :food_cat
+  belongs_to :cat, :class_name => "FoodCat"
 
   default_scope :order => :name
 
@@ -14,6 +14,8 @@ class Food < ActiveRecord::Base
   validates :price,  :presence => true,
                      :format => { :with => /^\d+??(?:\.\d{0,2})?$/ },
                      :numericality => {:greater_than => 0, :less_than => 200}
+
+  validates :cat_id, :presence => true
 
 
 end

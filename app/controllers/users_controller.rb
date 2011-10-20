@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   #before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
-  before_filter :authenticate, :except => [:show, :new, :create]
+  #before_filter :authenticate, :except => [:show, :new, :create]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user, :only => [:destroy]
   before_filter :logged_in, :only => [:create, :new]
@@ -14,9 +14,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
-    @microposts = @user.microposts.paginate(:page => params[:page])
-    @ban = User.find(params[:id]).bans.new
-    flash_notice_ban(@user)
   end
 
   def index
@@ -28,8 +25,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user]) 
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      flash[:success] = "Bienvenido a La Font"
+      redirect_to root_path
     else
       @user.password.clear
       @user.password_confirmation.clear 
@@ -58,20 +55,6 @@ class UsersController < ApplicationController
       @title = "Edit user"
       render :edit
     end
-  end
-
-  def following
-    @title = "Following"
-    @user = User.find(params[:id])
-    @users = @user.following.paginate(:page => params[:page])
-    render :show_follow
-  end
-
-  def followers
-    @title = "Followers"
-    @user = User.find(params[:id])
-    @users = @user.followers.paginate(:page => params[:page])
-    render :show_follow
   end
 
   private

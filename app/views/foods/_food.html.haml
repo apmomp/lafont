@@ -2,7 +2,11 @@
   .fname.float
     = food.name
   .fprice.float
-    = number_with_precision(food.price, :precision => 2) + "€"
+    #{number_with_precision(food.price, :precision => 2)}€
+    = link_to "[x]", food, :method => :delete,
+                           :confirm => "¿Borrar #{food.name}?",
+                           :title => "Borrar " + food.name unless not request.fullpath =~ /\/food_cats\/.*\/edit/
 .fdesc
   = food.desc
+  
     

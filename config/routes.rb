@@ -6,7 +6,23 @@ Lafont::Application.routes.draw do
 
   resources :menu, :only => :index
  
-  resources :food_cat, :only => :show
+  resources :food_cats, :only => [:edit, :show]
+
+  resources :foods
+
+  resources :food_cats do
+    resources :foods
+  end
+
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  resources :users
+
+  resources :bills, :only => [:new, :create, :index]
+
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

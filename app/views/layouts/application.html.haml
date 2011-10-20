@@ -12,10 +12,6 @@
       = render 'layouts/header'
       %section.round
         - flash.each do |key, value|
-          =  content_tag(:div, value, :class => "flash #{key}")
-        %nav
-          %ul
-            - FoodCatSection.all.each do |sec|
-              %li.csection
-                = link_to sec.name, menu_index_path + "?section=" + sec.id.to_s
+          =  content_tag(:div, value, :class => "round flash #{key}")
         = yield
+      = debug(params) if Rails.env.development?

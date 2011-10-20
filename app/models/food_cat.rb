@@ -1,8 +1,9 @@
 class FoodCat < ActiveRecord::Base
-  attr_accessible :name, :food_cat_section_id
+  attr_accessible :name, :section_id
 
-  has_many :foods
-  belongs_to :food_cat_section
+  has_many :foods, :foreign_key => :cat_id
+
+  belongs_to :section
 
   validates :name, :presence => true,
                    :length => { :within => 2..32 },

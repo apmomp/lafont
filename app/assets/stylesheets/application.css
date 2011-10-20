@@ -37,15 +37,15 @@ section h1 {
 }
 /* Links */
 a {
-  color: #09c;
+  color: #ccc;
   text-decoration: none;
 }
 a:hover {
-  color: #069;
+  color: #ccc;
   text-decoration: underline;
 }
 a:visited {
-  color: #069;
+  color: #ccc;
 }
 /* Navigation */
 nav {
@@ -70,10 +70,26 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:visited {
-  color: #09c;
+  color: #ccc;
 }
 nav ul li a:hover {
   text-decoration: underline;
+}
+
+.success {
+    background: none repeat scroll 0 0 #E6EFC2;
+    border-color: #C6D880;
+    color: #264409;
+}
+
+.error, .alert, .notice, .success, .info {
+    border: 2px solid #DDDDDD;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.notice, .error {
+    background-color: #AA2233;
 }
 
 li.csection {
@@ -95,11 +111,18 @@ li.csection {
 .foodcat td, h2{
   /*float: left;*/
  padding-left: 1em;
- padding-right: 1em; 
+ padding-right: 1em;
 }
 
-.column {
+.column3 {
   width: 30%;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+  float: left;
+  margin-bottom: 2em;
+}
+.column2 {
+  width: 45%;
   margin-left: 0.7em;
   margin-right: 0.7em;
   float: left;
@@ -110,12 +133,26 @@ div.float{
   float: left;
 }
 
+.form_black {
+  background-color: #000;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 div.foodcat{
   width: 100%;
   margin-bottom: 2em;
   padding-left: 0.5em; 
   padding-right: 0.5em;
   padding-bottom: 1em;
+}
+
+div.foodcat h2 {
+  font-size: 1.1em;
+}
+
+div.foodcat span {
+  font-size: 0.7em;
 }
 
 div.food{
@@ -136,3 +173,14 @@ div.fdesc{
   color: #ccc;
   font-size: 90%;
 }
+
+div.field label {
+  width: 30%;
+}
+
+div.field input {
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+} 

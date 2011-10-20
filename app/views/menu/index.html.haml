@@ -1,8 +1,14 @@
+%nav
+  %ul 
+    - Section.all.each do |sec|
+      %li.csection
+        = link_to sec.name, menu_index_path + "?section=" + sec.id.to_s
+
 %h1 Menú
 - num_cats = @foodcats.count
 
 .round
   - (0..2).each do |num|
-    .column
+    .column3
       - cats = (num..num_cats-1).step(3).each do |cat|
         = render @foodcats[cat]

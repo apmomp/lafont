@@ -1,0 +1,15 @@
+%h1 Login
+ 
+=form_for(:session, :url => sessions_path) do |f|
+  .field
+    .flabel
+      = f.label :email
+    .ffield
+      = f.text_field :email
+  .field
+    .flabel
+      = f.label :password
+    .ffield
+      = f.password_field :password
+  .actions
+    = f.submit "Ingresar"
