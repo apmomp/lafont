@@ -1,0 +1,8 @@
+.round.foodcat.float
+  %h2
+    = link_to bill.name, edit_bill_path(bill)
+  
+  = render bill.lines
+  .total.float
+    = "Total: #{number_with_precision(bill.foods.sum(:price), :precision => 2)}€"
+

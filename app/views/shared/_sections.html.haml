@@ -1,0 +1,5 @@
+%nav
+  %ul
+    - Section.all.each do |sec|
+      %li.csection
+        = link_to sec.name, path + "?section=" + sec.id.to_s

@@ -1,8 +1,4 @@
-%nav
-  %ul 
-    - Section.all.each do |sec|
-      %li.csection
-        = link_to sec.name, menu_index_path + "?section=" + sec.id.to_s
+= render 'shared/sections', :path => menu_index_path
 
 %h1 Menú
 - num_cats = @foodcats.count

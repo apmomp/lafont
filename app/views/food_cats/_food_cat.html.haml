@@ -1,7 +1,8 @@
 .round.foodcat.float
   %h2
     = food_cat.name
-    %span
-      = link_to "[Editar]", edit_food_cat_path(food_cat.id)
+    - if request.fullpath =~ /\/menu/
+      %span
+        = link_to "[Editar]", edit_food_cat_path(food_cat.id)
 
   = render food_cat.foods

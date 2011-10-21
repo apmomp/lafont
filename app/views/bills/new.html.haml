@@ -1,0 +1,10 @@
+%h2 Crear nueva cuenta
+
+=form_for(@bill) do |f|
+  = render 'shared/error_messages', :object => f.object
+  .flabel
+    = f.label :nombre_de_la_cuenta
+  .ffield
+    = f.text_field :name
+  .actions
+    =f.submit "Guardar"

@@ -1,0 +1,11 @@
+= render 'shared/sections', :path => edit_bill_path(@bill)
+
+%h2
+  = "Editando cuenta \"#{@bill.name}\""
+.round
+  - (0..2).each do |num|
+    .column3
+      - if num == 0
+        = render @bill
+      - cats = (num..@foodcats.count-1).step(3).each do |cat|
+        = render @foodcats[cat]

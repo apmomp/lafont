@@ -1,0 +1,13 @@
+%h2
+  = @title
+
+%h3
+  = link_to "Nueva cuenta", new_bill_path
+
+- num_bills = @bills.count
+.round
+  - (0..2).each do |num|
+    .column3
+      - bills = (num..num_bills-1).step(3).each do |cat|
+        = render @bills[cat]
+
