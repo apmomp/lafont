@@ -1,0 +1,2 @@
+$("<%="#b_lines_#{@bill.id}"%>").html("<%= escape_javascript(render(@bill.lines)) %>")
+$("<%="#bill_head_#{@bill.id}"%>").html("<%= escape_javascript(render 'bill_head', :bill => @bill, :expanded => true)%>")

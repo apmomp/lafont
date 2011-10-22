@@ -1,0 +1,10 @@
+.float{:id => "bill_head_#{bill.id.to_s}"}
+  %h2
+    .float.bill_head
+      = link_to bill.name, edit_bill_path(bill)
+      - if not request.fullpath =~ edit_bill_path_regex
+        - if not expanded
+          = link_to (image_tag "expand.gif"), bill_expand_path(bill), :remote => true, :method => :post
+        - else
+          = link_to (image_tag "contract.gif"), bill_contract_path(bill), :remote => true, :method => :post
+     

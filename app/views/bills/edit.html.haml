@@ -6,6 +6,7 @@
   - (0..2).each do |num|
     .column3
       - if num == 0
-        = render @bill
+        #bill
+          = render @bill, :is_bill => true
       - cats = (num..@foodcats.count-1).step(3).each do |cat|
-        = render @foodcats[cat]
+        = render @foodcats[cat], :contracted => true

@@ -10,4 +10,20 @@ class FoodCatsController < ApplicationController
     @title = "Editando " + @cat.name + "..."
     @food = Food.new
   end
+
+  def expand
+    @cat = FoodCat.find_by_id(params[:food_cat_id])
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def contract
+    @cat = FoodCat.find_by_id(params[:food_cat_id])
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

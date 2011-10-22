@@ -29,5 +29,19 @@ class BillsController < ApplicationController
     else
       @foodcats = FoodCat.where("section_id = ?", params[:section])
     end
-  end 
+  end
+
+  def expand
+    @bill = Bill.find_by_id(params[:bill_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def contract
+    @bill = Bill.find_by_id(params[:bill_id])
+    respond_to do |format|
+      format.js
+    end
+  end
 end

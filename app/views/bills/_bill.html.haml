@@ -1,8 +1,12 @@
+
 .round.foodcat.float
-  %h2
-    = link_to bill.name, edit_bill_path(bill)
-  
-  = render bill.lines
+  = render 'bills/bill_head', :bill => bill, :expanded => false
+  %div{:id => "b_lines_#{bill.id.to_s}"}
+    - if request.fullpath =~ edit_bill_path_regex
+      = render bill.lines
+    - else
+      %span
+        &#x200B;
   .total.float
     = "Total: #{number_with_precision(bill.foods.sum(:price), :precision => 2)}€"
 

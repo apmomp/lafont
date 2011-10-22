@@ -194,4 +194,26 @@ div.field, div.actions {
 
 div.fname input {
   width: 100%;
-} 
+}
+
+div#bill div{
+  background-color: #264426;
+}
+
+div.bill_head {
+  width: 100%;
+}
+
+/* Cats y bills' links */
+div.foodcat a {
+  color: gold;
+  text-decoration: none;
+}
+div.foodcat a:hover {
+  color: gold;
+  text-decoration: underline;
+}
+div.foodcat a:visited {
+  color: gold;
+}
+

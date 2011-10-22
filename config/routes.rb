@@ -16,10 +16,22 @@ Lafont::Application.routes.draw do
 
   resources :sessions, :only => [:new, :create, :destroy]
 
-  resources :users
+  resources :users, :only => [:new, :create]
 
   resources :bills, :only => [:new, :create, :edit, :index] do
     resources :bill_lines, :only => [:create]
+  end
+
+  resources :bill_lines, :only => :destroy
+
+
+  resources :bills do
+    post :expand
+    post :contract
+    resources :food_cats do
+      post :expand
+      post :contract
+    end
   end
 
   match '/signup', :to => 'users#new'

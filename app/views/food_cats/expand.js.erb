@@ -1,0 +1,2 @@
+$("<%="#food_cat_head_#{@cat.id}"%>").html("<%= escape_javascript(render('food_cats/food_cat_head', :food_cat => @cat, :contracted => false)) %>")
+$("<%="#food_cat_foods_#{@cat.id}"%>").html("<%= escape_javascript(render(@cat.foods, :food_cat => @cat, :contracted => false)) %>")
