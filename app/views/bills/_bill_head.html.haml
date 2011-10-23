@@ -1,6 +1,6 @@
-.float{:id => "bill_head_#{bill.id.to_s}"}
+.float.bill_head{:id => "bill_head_#{bill.id.to_s}"}
   %h2
-    .float.bill_head
+    .float
       = link_to bill.name, edit_bill_path(bill)
       - if not request.fullpath =~ edit_bill_path_regex
         - if not expanded

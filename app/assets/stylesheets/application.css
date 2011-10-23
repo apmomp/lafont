@@ -25,7 +25,6 @@ header img {
 }
 section {
   margin-top: 1em;
-  font-size: 120%;
   padding: 1em;
   background: #222;
   float: left;
@@ -128,6 +127,13 @@ li.csection {
   float: left;
   margin-bottom: 2em;
 }
+.column {
+  width: 95%;
+  margin-left: 0.7em;
+  margin-right: 0.8em;
+  float: left;
+  margin-bottom: 2em;
+}
 
 div.float{
   float: left;
@@ -198,11 +204,14 @@ div.fname input {
 
 div#bill div{
   background-color: #264426;
+  font-size: 95%;
 }
 
 div.bill_head {
   width: 100%;
+  margin-bottom: 0.7em;
 }
+
 
 /* Cats y bills' links */
 div.foodcat a {
