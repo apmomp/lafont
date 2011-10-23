@@ -1,6 +1,7 @@
 .round.foodcat.float{:id => "food_cat_#{food_cat.id}"}
   %div{:id => "food_cat_head_#{food_cat.id}"}
     = render 'food_cats/food_cat_head', :food_cat => food_cat, :contracted => (defined? contracted) ? contracted : false
+
   %div{:id => "food_cat_foods_#{food_cat.id}"}
     - if defined? contracted and contracted
       %span

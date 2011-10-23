@@ -1,12 +1,13 @@
 %h2 
   = food_cat.name
-  - if request.fullpath =~ /\/menu/
+  
+  - if request.fullpath =~ edit_bill_path_regex
+    - bill = Bill.find_by_id((params[:bill_id]) ? params[:bill_id] : params[:id])
+    - if defined? contracted and contracted
+      = link_to (image_tag "expand.gif"), bill_food_cat_expand_path(bill,food_cat), :remote => true, :method => :post
+    - else
+      = link_to (image_tag "contract.gif"), bill_food_cat_contract_path(bill,food_cat), :remote => true, :method => :post
+
+  - elsif request.fullpath =~ /\/menu/
     %span
       = link_to "[Editar]", edit_food_cat_path(food_cat.id)
-  - else
-    -if request.fullpath =~ edit_bill_path_regex
-      - bill = Bill.find_by_id((params[:bill_id]) ? params[:bill_id] : params[:id])
-      - if defined? contracted and contracted
-        = link_to (image_tag "expand.gif"), bill_food_cat_expand_path(bill,food_cat), :remote => true, :method => :post
-      - else
-        = link_to (image_tag "contract.gif"), bill_food_cat_contract_path(bill,food_cat), :remote => true, :method => :post

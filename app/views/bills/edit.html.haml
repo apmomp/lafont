@@ -5,7 +5,7 @@
 .round
   .column3
     #bill
-      = render @bill, :is_bill => true
+      = render @bill
   - (0..1).each do |num|
     .column3
       - cats = (num..@foodcats.count-1).step(2).each do |cat|

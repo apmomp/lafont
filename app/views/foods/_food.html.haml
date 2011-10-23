@@ -1,20 +1,21 @@
-- is_bill = false unless defined? is_bill
-
 .food
   .fname.float
-    - if request.fullpath =~ edit_bill_path_regex and not is_bill
-      = button_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}", :remote => true
-    - else
-      - if request.fullpath =~ edit_bill_path_regex and defined? bill_line
+    - if request.fullpath =~ edit_bill_path_regex
+      - if defined? bill_line
         = link_to image_tag("delete.gif"), bill_line, :method => :delete, :remote => true,
                            :confirm => "¿Borrar #{food.name}?",
                            :title => "Borrar " + food.name
+        = food.name
+      - else
+        = button_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}", :remote => true
+
+    - else
       = food.name
   .fprice.float
     #{number_with_precision(food.price, :precision => 2)}€
     = link_to image_tag("delete.gif"), food, :method => :delete,
                            :confirm => "¿Borrar #{food.name}?",
-                           :title => "Borrar " + food.name unless not request.fullpath =~ /\/food_cats\/.*\/edit/
+                           :title => "Borrar " + food.name unless not request.fullpath =~ /\/food_cats\/\d+\/edit/
 - if request.fullpath =~ /(menu|food_cats\/\d+\/edit\/?)/
   .fdesc
     = food.desc
