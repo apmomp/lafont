@@ -24,11 +24,8 @@ class BillsController < ApplicationController
   def edit
     @bill = Bill.find_by_id(params[:id])
     @title = "Editando #{@bill.name}"
-    if params[:section].nil?
-      @foodcats = FoodCat.all
-    else
-      @foodcats = FoodCat.where("section_id = ?", params[:section])
-    end
+    sec = (params[:section].nil?) ? 1 : params[:section]
+    @foodcats = FoodCat.where("section_id = ?", sec)
   end
 
   def expand

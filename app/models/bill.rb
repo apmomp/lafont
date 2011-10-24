@@ -6,8 +6,7 @@ class Bill < ActiveRecord::Base
   has_many :foods, :through => :lines
 
   validates :name,   :presence => true,
-                     :length => { :within => 2..32 },
-                     :uniqueness => { :case_sensitive => true }
+                     :length => { :within => 2..32 }
 
   validates :user_id, :presence => true
 
