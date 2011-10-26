@@ -1,5 +1,5 @@
 
-.round.foodcat.float
+.round.foodcat.float{ :class => "state#{bill.state_id.to_s}"}
   = render 'bills/bill_head', :bill => bill, :expanded => false
   %div{:id => "b_lines_#{bill.id.to_s}"}
     - if request.fullpath =~ edit_bill_path_regex
@@ -9,4 +9,8 @@
         &#x200B;
   .total.float
     = "Total: #{number_with_precision(bill.foods.sum(:price), :precision => 2)}€"
+  .pay.float
+    - if bill.state_id == 1
+      = button_to "Efectivo", bill_pay_path(bill) + "?state=2"
+      = button_to "Tarjeta", bill_pay_path(bill) + "?state=3"
 

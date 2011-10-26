@@ -28,6 +28,7 @@ Lafont::Application.routes.draw do
   resources :bills do
     post :expand
     post :contract
+    post :pay
     resources :food_cats do
       post :expand
       post :contract

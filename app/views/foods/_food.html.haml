@@ -7,7 +7,10 @@
                            :title => "Borrar " + food.name
         = food.name
       - else
-        = button_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}", :remote => true
+        = link_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}",
+                                                                  :remote => true,
+                                                                  :class => "food_button",
+                                                                  :method => :post
 
     - else
       = food.name

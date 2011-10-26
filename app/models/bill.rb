@@ -3,6 +3,7 @@ class Bill < ActiveRecord::Base
 
   has_many :lines, :class_name => "BillLine", :foreign_key => :bill_id
   belongs_to :user
+  belongs_to :state, :class_name => "BillState"
   has_many :foods, :through => :lines
 
   validates :name,   :presence => true,

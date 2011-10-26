@@ -1,0 +1,5 @@
+%nav
+  %ul
+    - BillState.all.each do |state|
+      %li.csection
+        = link_to state.name, path + "?state=" + state.id.to_s

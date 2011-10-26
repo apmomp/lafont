@@ -203,7 +203,7 @@ div.fname input {
 }
 
 div#bill div{
-  background-color: #264426;
+  /*background-color: #264426;*/
   font-size: 95%;
 }
 
@@ -215,14 +215,41 @@ div.bill_head {
 
 /* Cats y bills' links */
 div.foodcat a {
-  color: gold;
+  color: #ccc;
   text-decoration: none;
 }
-div.foodcat a:hover {
+/*div.foodcat a:hover {
   color: gold;
   text-decoration: underline;
-}
+}*/
 div.foodcat a:visited {
   color: gold;
 }
 
+a.food_button {
+  /*font-size: 2em;*/
+  font-weight: bold;
+}
+
+a:hover.food_button {
+  background: gold;
+  color: #000;
+  text-decoration: none;
+}
+
+
+div.pay input {
+  width: 8em;
+}
+
+/*div.foodcat.state1{
+  background-color: #880800;
+}*/
+
+div.foodcat.state2{
+  background-color: #264426;
+}
+
+div.foodcat.state3{
+  background-color: #224567;
+}
