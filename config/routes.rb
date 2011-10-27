@@ -34,6 +34,12 @@ Lafont::Application.routes.draw do
       post :contract
     end
   end
+  
+  resources :cashes, :only => :index
+  
+  resources :cashes do
+    post :close
+  end
 
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'

@@ -1,4 +1,5 @@
 class BillsController < ApplicationController
+  before_filter :opened_cash
   before_filter :bill_state, :only => [:pay, :edit]
 
   def new
@@ -37,8 +38,10 @@ class BillsController < ApplicationController
       bill.state_id = 1
     elsif params[:state] == "2"
       bill.state_id = 2
+      bill.cash_id = Cash.current.id
     elsif params[:state] == "3"
       bill.state_id = 3
+      bill.cash_id = Cash.current.id
     end
 
     bill.save
@@ -61,6 +64,14 @@ class BillsController < ApplicationController
   end
 
   private
+  
+    def opened_cash
+      
+      if Cash.current.nil?
+        Cash.create!
+        flash[:notice] = "Caja abierta"
+      end
+    end
 
     def bill_state
       bill_id = (params[:bill_id]) ? params[:bill_id] : params[:id]

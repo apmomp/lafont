@@ -1,6 +1,5 @@
-%header
-  .round
-    = image_tag('lafont.jpg', :alt => "La font")
+.float
+  = image_tag('lafont.png', :alt => "La font")
   %nav.round
     %ul
       %li
@@ -11,7 +10,7 @@
         %li
           = link_to "Cuentas", bills_path
         %li
-          = link_to "Caja", "#"
+          = link_to "Cajas", cashes_path
         %li
           = link_to "[#{current_user.name}] Salir", signout_path
       - else

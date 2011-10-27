@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111023210221) do
+ActiveRecord::Schema.define(:version => 20111027154021) do
 
   create_table "bill_lines", :force => true do |t|
     t.integer  "food_id"
@@ -25,9 +25,18 @@ ActiveRecord::Schema.define(:version => 20111023210221) do
   end
 
   create_table "bills", :force => true do |t|
-    t.string  "name"
-    t.integer "user_id"
-    t.integer "state_id", :default => 1
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "state_id",   :default => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "cash_id"
+  end
+
+  create_table "cashes", :force => true do |t|
+    t.datetime "closed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "food_cats", :force => true do |t|
