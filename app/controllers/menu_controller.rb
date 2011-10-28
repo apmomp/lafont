@@ -2,11 +2,8 @@ class MenuController < ApplicationController
 
   def index
     @title = "Menu"
-    if params[:section].nil?
-      @foodcats = FoodCat.all
-    else
-      @foodcats = FoodCat.where("section_id = ?", params[:section])
-    end
-
+    sec = (params[:section].nil?) ? 1 : params[:section]
+    @foodcats = FoodCat.where("section_id = ?", sec)
+    
   end
 end

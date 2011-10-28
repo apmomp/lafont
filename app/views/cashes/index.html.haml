@@ -14,7 +14,10 @@
         - bill = (num..num_bills-1).step(2).each do |bill|
           = render @cash.bills[bill]
 .column
-  %h2 Historial de cajas
+  .column3
+    %h2 Historial de cajas:
   - @cashes.each do |c|
-    = link_to c.created_at.to_s, c
-    %br
+    .column3
+      = link_to "#{c.created_at.to_s}", c
+    .column3
+      = "#{number_with_precision(c.foods.sum(:price), :precision => 2) }€"

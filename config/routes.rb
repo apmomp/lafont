@@ -8,10 +8,10 @@ Lafont::Application.routes.draw do
  
   resources :food_cats, :only => [:edit, :show]
 
-  resources :foods
+  resources :foods, :only => [:show, :destroy, :edit]
 
   resources :food_cats do
-    resources :foods
+    resources :foods, :only => [:create]
   end
 
   resources :sessions, :only => [:new, :create, :destroy]
