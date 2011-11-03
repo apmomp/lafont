@@ -6,7 +6,7 @@ class Cash < ActiveRecord::Base
   default_scope :order => 'cashes.created_at DESC'
   
   def self.current
-    cash = Cash.last
+    cash = Cash.first
     if not cash.nil? and cash.created_at < Time.now and cash.closed_at == nil
       cash
     else

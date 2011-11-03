@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111027154021) do
+ActiveRecord::Schema.define(:version => 20111028210101) do
 
   create_table "bill_lines", :force => true do |t|
     t.integer  "food_id"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(:version => 20111027154021) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "bill_lines", ["bill_id"], :name => "index_bill_lines_on_bill_id"
+  add_index "bill_lines", ["food_id"], :name => "index_bill_lines_on_food_id"
 
   create_table "bill_states", :force => true do |t|
     t.string "name"
@@ -33,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20111027154021) do
     t.integer  "cash_id"
   end
 
+  add_index "bills", ["cash_id"], :name => "index_bills_on_cash_id"
+
   create_table "cashes", :force => true do |t|
     t.datetime "closed_at"
     t.datetime "created_at"
@@ -46,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20111027154021) do
     t.integer  "section_id"
   end
 
+  add_index "food_cats", ["section_id"], :name => "index_food_cats_on_section_id"
+
   create_table "foods", :force => true do |t|
     t.string   "name"
     t.string   "desc"
@@ -53,7 +60,10 @@ ActiveRecord::Schema.define(:version => 20111027154021) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cat_id"
+    t.boolean  "deleted",    :default => false
   end
+
+  add_index "foods", ["cat_id"], :name => "index_foods_on_cat_id"
 
   create_table "sections", :force => true do |t|
     t.string   "name"
@@ -71,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20111027154021) do
     t.string   "nick"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["nick"], :name => "index_users_on_nick", :unique => true
 
 end

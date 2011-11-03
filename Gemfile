@@ -6,11 +6,11 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
 gem 'will_paginate', '3.0.1'
 gem 'haml-rails', '0.3.4', :require => 'haml'
 
 gem 'rack', '1.3.3'
-#gem "unicorn", "4.1.1"
 
 group :development do
   gem 'rspec-rails', '2.6.1'

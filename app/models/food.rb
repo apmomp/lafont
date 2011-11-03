@@ -4,10 +4,10 @@ class Food < ActiveRecord::Base
   belongs_to :cat, :class_name => "FoodCat"
 
   default_scope :order => :name
+  scope :menu_foods, where(:deleted => false)
 
   validates :name,   :presence => true,
-                     :length => { :within => 2..32 },
-                     :uniqueness => { :case_sensitive => true }
+                     :length => { :within => 2..32 }
 
   validates :desc,   :length => { :maximum => 255 }
 
@@ -16,6 +16,5 @@ class Food < ActiveRecord::Base
                      :numericality => {:greater_than => 0, :less_than => 200}
 
   validates :cat_id, :presence => true
-
 
 end

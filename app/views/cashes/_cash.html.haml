@@ -1,0 +1,10 @@
+.column3
+  = "Total caja: #{number_with_precision(cash.foods.sum(:price), :precision => 2) }€"
+  %br
+  = button_to "Cerrar caja", cash_close_path(cash)
+- if cash and not cash.bills.nil?
+  - num_bills = cash.bills.count
+  - (0..1).each do |num|
+    .column3
+      - bill = (num..num_bills-1).step(2).each do |bill|
+        = render cash.bills[bill]

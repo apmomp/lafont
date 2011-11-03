@@ -228,8 +228,9 @@ div.foodcat a:visited {
 }
 
 a.food_button {
-  /*font-size: 2em;*/
   font-weight: bold;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
 }
 
 a:hover.food_button {
@@ -239,11 +240,13 @@ a:hover.food_button {
 	-moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 3px;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
 }
 
 
 div.pay input {
-  width: 8em;
+  width: 10em;
 }
 
 /*div.foodcat.state1{
@@ -256,4 +259,8 @@ div.foodcat.state2{
 
 div.foodcat.state3{
   background-color: #224567;
+}
+
+div.foodcat img {
+	border: none;
 }

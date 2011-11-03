@@ -18,8 +18,12 @@ class FoodsController < ApplicationController
   def destroy
     food = Food.find_by_id(params[:id])
     cat = food.cat
-    food.destroy
-    flash[:success] = "¡#{food.name} borrado!"
+    food.deleted = true
+    if food.save
+      flash[:success] = "¡#{food.name} borrado!"
+    else
+      flash[:notice] = "¡#{food.name} no pudo ser borrado!"
+    end
     redirect_back_or edit_food_cat_path(cat)
   end
   

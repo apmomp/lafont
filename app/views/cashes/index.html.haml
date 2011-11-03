@@ -3,21 +3,11 @@
 - if not @cash.nil?
   %h2
     Caja de hoy
-  .column3
-    = "Total caja: #{number_with_precision(@cash.foods.sum(:price), :precision => 2) }€"
-    %br
-    = button_to "Cerrar caja", cash_close_path(@cash)
-  - if @cash and not @cash.bills.nil?
-    - num_bills = @cash.bills.count
-    - (0..1).each do |num|
-      .column3
-        - bill = (num..num_bills-1).step(2).each do |bill|
-          = render @cash.bills[bill]
+  = render @cash
 .column
-  .column3
-    %h2 Historial de cajas:
+  %h2 Historial de cajas:
   - @cashes.each do |c|
-    .column3
-      = link_to "#{c.created_at.to_s}", c
-    .column3
+    .column2
+      = link_to "#{l c.created_at}", c
+    .column2
       = "#{number_with_precision(c.foods.sum(:price), :precision => 2) }€"
