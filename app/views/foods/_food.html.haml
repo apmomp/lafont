@@ -1,17 +1,11 @@
 .food
   .fname.float
     - if request.fullpath =~ edit_bill_path_regex
-      - if defined? bill_line
-        = link_to image_tag("delete.gif"), bill_line, :method => :delete, :remote => true,
-                           :confirm => "¿Borrar #{food.name}?",
-                           :title => "Borrar " + food.name
-        = food.name
-      - else
-        = link_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}",
-                                                                  :remote => true,
+      = link_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}",
                                                                   :class => "food_button",
-                                                                  :method => :post
-
+                                                                  :title => "Añadir #{food.name}",
+                                                                  :method => :post,
+                                                                  :remote => true
     - else
       = food.name
   .fprice.float

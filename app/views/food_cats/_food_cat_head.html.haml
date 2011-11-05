@@ -1,6 +1,5 @@
 %h2 
-  = food_cat.name
-  
+  = food_cat.name 
   - if request.fullpath =~ edit_bill_path_regex
     - bill = Bill.find_by_id((params[:bill_id]) ? params[:bill_id] : params[:id])
     - if defined? contracted and contracted
