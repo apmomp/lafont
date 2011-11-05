@@ -1,0 +1,18 @@
+%h2
+  Nueva categoría
+
+= form_for @cat do |f|
+  = render 'shared/error_messages', :object => f.object
+  .field
+    .flabel
+      = f.label :nombre
+    .ffield
+      = f.text_field :name
+  .field
+    .flabel
+      = f.label :sección
+    .ffield
+      = select("post", "section_id", Section.all.collect {|s| [ s.name, s.id ] }, {:prompt => '-- Sección --'})
+  
+  .actions
+    = f.submit "Crear categoría"    

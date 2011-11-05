@@ -1,6 +1,10 @@
 = render 'shared/sections', :path => menu_index_path
 
 %h1 Menú
+
+%h2
+  = link_to "Crear categoría", new_food_cat_path
+
 - num_cats = @foodcats.count
 
 .round

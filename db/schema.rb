@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111028210101) do
+ActiveRecord::Schema.define(:version => 20111104224803) do
 
   create_table "bill_lines", :force => true do |t|
-    t.integer  "food_id"
     t.integer  "bill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.decimal  "price",      :precision => 6, :scale => 2
   end
 
   add_index "bill_lines", ["bill_id"], :name => "index_bill_lines_on_bill_id"
-  add_index "bill_lines", ["food_id"], :name => "index_bill_lines_on_food_id"
 
   create_table "bill_states", :force => true do |t|
     t.string "name"
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(:version => 20111028210101) do
   create_table "foods", :force => true do |t|
     t.string   "name"
     t.string   "desc"
-    t.decimal  "price"
+    t.decimal  "price",      :precision => 6, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cat_id"
-    t.boolean  "deleted",    :default => false
+    t.boolean  "deleted",                                  :default => false
   end
 
   add_index "foods", ["cat_id"], :name => "index_foods_on_cat_id"

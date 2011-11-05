@@ -14,7 +14,7 @@ development:
   adapter: mysql2
   database: lafont_dev
   user: root
-  password: <%= begin IO.read("/home/apmomp/.db") rescue "" end %>
+  password:
   encoding: utf8
   
 # Warning: The database defined as "test" will be erased and
@@ -27,7 +27,8 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: lafont
+  user: root
+  password:
+  encoding: utf8

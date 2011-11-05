@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module BillsHelper
 
   def edit_bill_path_regex

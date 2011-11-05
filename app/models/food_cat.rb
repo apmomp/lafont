@@ -7,5 +7,7 @@ class FoodCat < ActiveRecord::Base
   validates :name, :presence => true,
                    :length => { :within => 2..32 },
                    :uniqueness => { :case_sensitive => false }
+
+  validates :section_id, :presence => true
                      
 end

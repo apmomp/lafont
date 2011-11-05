@@ -1,5 +1,5 @@
 class Cash < ActiveRecord::Base
-  has_many :bills
+  has_many :bills, :dependent => :destroy
   has_many :lines, :class_name => "BillLine", :foreign_key => :bill_id, :through => :bills
   has_many :foods, :through => :lines
   
@@ -12,5 +12,9 @@ class Cash < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def closed?
+    self.closed_at != nil
   end
 end

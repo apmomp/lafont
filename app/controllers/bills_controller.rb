@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class BillsController < ApplicationController
   before_filter :opened_cash
   before_filter :bill_state, :only => [:pay, :edit]
@@ -65,11 +67,10 @@ class BillsController < ApplicationController
 
   private
   
-    def opened_cash
-      
+    def opened_cash 
       if Cash.current.nil?
-        Cash.create!
-        flash[:notice] = "Caja abierta"
+        c = Cash.create!
+        flash[:success] = "Caja abierta a fecha de #{l c.created_at}"
       end
     end
 
@@ -77,7 +78,7 @@ class BillsController < ApplicationController
       bill_id = (params[:bill_id]) ? params[:bill_id] : params[:id]
       if Bill.find_by_id(bill_id).state_id != 1
         flash[:notice] = "La cuenta está pagada y no puede ser modificada"
-        redirect_to bills_path
+        redirect_back_or bills_path
       end
     end
 

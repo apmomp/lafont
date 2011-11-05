@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class FoodsController < ApplicationController
 
   def create

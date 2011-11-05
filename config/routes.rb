@@ -6,7 +6,7 @@ Lafont::Application.routes.draw do
 
   resources :menu, :only => :index
  
-  resources :food_cats, :only => [:edit, :show]
+  resources :food_cats, :only => [:create, :new, :edit, :show]
 
   resources :foods, :only => [:show, :destroy, :edit]
 

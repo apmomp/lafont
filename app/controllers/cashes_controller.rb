@@ -1,9 +1,12 @@
+# encoding: utf-8
+
 class CashesController < ApplicationController
-  
+ 
   def index
     @title = "Cajas"
     @cash = Cash.current
     @cashes = Cash.all
+    @cashes.delete(@cash)
   end
   
   def show
