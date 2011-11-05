@@ -2,7 +2,7 @@
 
 class BillsController < ApplicationController
   before_filter :opened_cash
-  before_filter :bill_state, :only => [:pay, :edit]
+  before_filter :bill_state, :only => [:pay, :edit, :destroy]
 
   def new
     @title = "Nueva mesa"
@@ -31,6 +31,11 @@ class BillsController < ApplicationController
     @title = "Editando #{@bill.name}"
     sec = (params[:section].nil?) ? 1 : params[:section]
     @foodcats = FoodCat.where("section_id = ?", sec)
+  end
+
+  def destroy
+    Bill.find_by_id(params[:id]).destroy
+    redirect_to bills_path
   end
 
   def pay

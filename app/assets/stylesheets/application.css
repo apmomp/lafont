@@ -115,26 +115,101 @@ li.csection {
  padding-right: 1em;
 }
 
-.column3 {
-  width: 30%;
+.column3, .column2, .column, .col5, .col10, .col15, .col20, .col25, .col30, .col35, .col40, .col45, .col50, .col55, .col60, .col65, .col70, .col75, .col80, .col85, .col90, .col95 {
   margin-left: 0.7em;
   margin-right: 0.7em;
   float: left;
   margin-bottom: 2em;
+}
+
+.col5 {
+  width: 5%;
+}
+
+.col10 {
+  width: 10%
+}
+
+.col15 {
+  width: 15%;
+}
+
+.col20 {
+  width: 20%
+}
+
+.col25 {
+  width: 25%;
+}
+
+.col30 {
+  width: 30%;
+}
+
+.col35 {
+  width: 35%;
+}
+
+.col40{
+  width: 40%;
+}
+
+.col45{
+  width: 45%;
+}
+
+.col50 {
+  width: 50%;
+}
+
+.col55{
+  width: 55%;
+}
+
+.col60 {
+  width: 60%;
+}
+
+.col65 {
+  width: 65%;
+}
+
+.col70 {
+  width: 70%;
+}
+
+.col75 {
+  width: 75%;
+}
+
+.col80{
+  width: 80%;
+}
+
+.col85{
+  width: 85%;
+}
+
+.col90 {
+  width: 90%;
+}
+
+.col95{
+  width: 95%;
+}
+
+.mar0 {
+  margin-bottom: 0;
+}
+
+.column3 {
+  width: 30%;
 }
 .column2 {
   width: 45%;
-  margin-left: 0.7em;
-  margin-right: 0.7em;
-  float: left;
-  margin-bottom: 2em;
 }
 .column {
   width: 95%;
-  margin-left: 0.7em;
-  margin-right: 0.8em;
-  float: left;
-  margin-bottom: 2em;
 }
 
 div.float{

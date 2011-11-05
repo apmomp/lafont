@@ -14,7 +14,7 @@
         %li
           = link_to "Perfil", edit_user_path(current_user)
         %li
-          = link_to "[#{current_user.name}] Salir", signout_path
+          = link_to "[#{current_user.nick}] Salir", signout_path
       - else
         %li
           = link_to "Entrar", signin_path

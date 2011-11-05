@@ -3,7 +3,7 @@
 class PagesController < ApplicationController
 
   def home
-    @title = "Pagina principal"
+    @title = "Página principal"
   end
 
 end

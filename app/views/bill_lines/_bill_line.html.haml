@@ -2,7 +2,7 @@
   .fname.float
     = link_to image_tag("delete.gif"), bill_line, :method => :delete, :remote => true,
                            :confirm => "¿Borrar #{bill_line.name}?",
-                           :title => "Borrar #{bill_line.name}"
+                           :title => "Borrar #{bill_line.name}" unless not request.fullpath =~ edit_bill_path_regex
     = bill_line.name
   .fprice.float
     #{number_with_precision(bill_line.price, :precision => 2)}€

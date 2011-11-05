@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @title = "Sign up"
+    @title = "Registrar nuevo empleado..."
   end
   
   def show
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(:page => params[:page])
-    @title = "All users"
+    @title = "Lista de empleados"
   end
   
   def create 
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Ususario borrado"
+    flash[:success] = "Usuario borrado"
     redirect_to users_path
   end
 
@@ -65,7 +65,7 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       if not current_user?(@user)
-        flash[:notice] = "Acción prohibida..."
+        flash[:notice] = "Acción no permitida..."
         redirect_to(root_path)
       end
     end

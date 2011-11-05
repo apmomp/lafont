@@ -39,7 +39,7 @@ module SessionsHelper
 
   def admin_user
     if not current_user.admin?
-      flash[:notice] = "Acceso no permitido"
+      flash[:notice] = "Acceso no autorizado"
       redirect_to root_path
     end
   end

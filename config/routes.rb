@@ -16,9 +16,9 @@ Lafont::Application.routes.draw do
 
   resources :sessions, :only => [:new, :create, :destroy]
 
-  resources :users, :only => [:new, :create, :edit, :update, :show]
+  resources :users, :only => [:new, :create, :edit, :update, :show, :index]
 
-  resources :bills, :only => [:new, :create, :edit, :index] do
+  resources :bills, :only => [:new, :create, :destroy, :edit, :index] do
     resources :bill_lines, :only => [:create]
   end
 

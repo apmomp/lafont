@@ -1,4 +1,8 @@
-class BillLinesController < ApplicationController 
+# encoding: utf-8
+
+class BillLinesController < ApplicationController
+  before_filter :payed_bill, :only => :destroy
+
   def create
     @bill = Bill.find_by_id(params[:bill_id])
     food = Food.find_by_id(params[:food_id])
@@ -14,7 +18,7 @@ class BillLinesController < ApplicationController
   end
 
   def destroy
-    bill_line = BillLine.find_by_id([params[:id]])
+    bill_line = BillLine.find_by_id(params[:id])
     @bill = bill_line.bill
     bill_line.destroy
     
@@ -22,4 +26,13 @@ class BillLinesController < ApplicationController
       format.js { render 'create' }
     end
   end
+
+  private
+    def payed_bill
+      if BillLine.find_by_id(params[:id]).bill.state_id != 1
+        flash[:notice] = "La cuenta está cerrada y no puede modificarse"
+        redirect_back_or bills_path
+      end
+    end
+
 end

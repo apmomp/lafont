@@ -1,0 +1,20 @@
+%h1 Lista de empleados
+
+.col50.mar0
+  .col20.mar0
+    %strong Nombre
+  .col20.mar0
+    %strong Nick
+  .col5.mar0
+    %strong Admin
+    
+  
+
+- @users.each do |u|
+  .col50.mar0
+    .col20.mar0
+      = u.name
+    .col20.mar0
+      = u.nick
+    .col5.mar0
+      = "#{(u.admin) ? "sí" : "no"}"
