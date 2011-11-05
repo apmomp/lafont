@@ -1,0 +1,26 @@
+= render 'shared/error_messages', :object => f.object
+.field
+  .flabel
+    = f.label :name
+  .ffield
+    = f.text_field :name
+.field
+  .flabel
+    = f.label :nick
+  .ffield
+    = f.text_field :nick
+.field
+  .flabel
+    = f.label :email
+  .ffield
+    = f.text_field :email
+.field
+  .flabel
+    = f.label :contraseña
+  .ffield
+    = f.password_field :password
+.field
+  .flabel
+    = f.label :repetir_contraseña
+  .ffield
+    = f.password_field :password_confirmation

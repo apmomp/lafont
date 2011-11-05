@@ -4,7 +4,7 @@
   - if cash.closed?
     = "Caja cerrada el #{l cash.closed_at}"
   - else
-    = button_to "Cerrar caja", cash_close_path(cash)
+    = button_to "Cerrar caja", cash_close_path(cash), :confirm => "¿Seguro que quieres cerrar la caja?"
 - if cash and not cash.bills.nil?
   - num_bills = cash.bills.count
   - (0..1).each do |num|

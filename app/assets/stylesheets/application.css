@@ -77,19 +77,20 @@ nav ul li a:hover {
 }
 
 .success {
-    background: none repeat scroll 0 0 #E6EFC2;
-    border-color: #C6D880;
+    background: none repeat scroll 0 0 #66EF32;
+    border: 2px solid #C6D880;
     color: #264409;
 }
 
 .error, .alert, .notice, .success, .info {
-    border: 2px solid #DDDDDD;
+    /*border: 2px solid #DDDDDD;*/
     margin-bottom: 1em;
     padding: 0.8em;
 }
 
 .notice, .error {
     background-color: #AA2233;
+    border: 2px solid #AA8293;
 }
 
 li.csection {

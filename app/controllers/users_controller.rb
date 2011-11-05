@@ -3,10 +3,10 @@
 class UsersController < ApplicationController
   #before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
   #before_filter :authenticate, :except => [:show, :new, :create]
-  skip_before_filter :authenticate
+  skip_before_filter :authenticate, :except => [:create, :new, :destroy]
   before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user, :only => [:destroy]
-  before_filter :logged_in, :only => [:create, :new]
+  before_filter :admin_user, :only => [:create, :new, :destroy]
+  #before_filter :logged_in, :only => [:create, :new]
   before_filter :delete_himself, :only => [:destroy]
 
   def new
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User destroyed"
+    flash[:success] = "Ususario borrado"
     redirect_to users_path
   end
 
@@ -52,8 +52,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile updated"
-      redirect_to @user
+      flash[:success] = "Perfil actualizado"
+      redirect_to root_path
     else
       @title = "Edit user"
       render :edit
@@ -65,7 +65,7 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       if not current_user?(@user)
-        flash[:notice] = "Forbidden accion..."
+        flash[:notice] = "Acción prohibida..."
         redirect_to(root_path)
       end
     end
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       if current_user?(@user)
         redirect_to users_path
-        flash[:notice] = "You can't delete yourself"
+        flash[:notice] = "No te puedes eliminar a ti mismo"
       end
     end
 

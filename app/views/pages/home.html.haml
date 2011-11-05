@@ -1,1 +1,9 @@
 %h1 Página principal
+
+- if current_user.admin?
+  %ul
+    %li
+      = link_to "Registrar nuevo empleado", signup_path
+    %li
+      = link_to "Lista de empleados", users_path
+

@@ -13,6 +13,6 @@
   .pay.float
     - if bill.state_id == 1
       = button_to "Dejar pendiente", bills_path, :method => :get unless not request.fullpath =~ edit_bill_path_regex
-      = button_to "Efectivo", bill_pay_path(bill) + "?state=2"
-      = button_to "Tarjeta", bill_pay_path(bill) + "?state=3"
+      = button_to "Efectivo", bill_pay_path(bill) + "?state=2", :confirm => "¿Cobrar cuentacuenta en efectivo?"
+      = button_to "Tarjeta", bill_pay_path(bill) + "?state=3", :confirm => "¿Cobrar cuenta con tarjeta?"
 
