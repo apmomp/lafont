@@ -1,5 +1,5 @@
 .column3
-  = "Total caja: #{number_with_precision(cash.foods.sum(:price), :precision => 2) }€"
+  = "Total caja: #{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
   %br
   - if cash.closed?
     = "Caja cerrada el #{l cash.closed_at}"

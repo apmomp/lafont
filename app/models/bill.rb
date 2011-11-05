@@ -5,7 +5,6 @@ class Bill < ActiveRecord::Base
   belongs_to :user
   belongs_to :state, :class_name => "BillState"
   belongs_to :cash
-  has_many :foods, :through => :lines
 
   validates :name,   :presence => true,
                      :length => { :within => 2..32 }

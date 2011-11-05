@@ -7,7 +7,7 @@ module BillsHelper
   end
   
   def bill_total_price(bill)
-    "Total: #{number_with_precision(bill.foods.sum(:price), :precision => 2)}€"
+    "Total: #{number_with_precision(bill.lines.sum(:price), :precision => 2)}€"
   end
 
 end

@@ -1,7 +1,12 @@
 class BillLinesController < ApplicationController 
   def create
     @bill = Bill.find_by_id(params[:bill_id])
-    @bill.lines.create!(:food_id => params[:food_id])
+    food = Food.find_by_id(params[:food_id])
+    name = Name.find_by_name(food.name)
+    if name.nil?
+      name = Name.create!(:name => food.name)
+    end
+    @bill.lines.create!(:name_id => name.id, :price => food.price)
 
     respond_to do |format|
       format.js

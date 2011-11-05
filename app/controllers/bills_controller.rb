@@ -23,8 +23,7 @@ class BillsController < ApplicationController
 
   def index
     @title = "Lista de cuentas"
-    state = (params[:state].nil?) ? 1 : params[:state]
-    @bills = Bill.where("state_id = ?", state)
+    @bills = Bill.where("state_id = 1")
   end
 
   def edit

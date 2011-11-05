@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -9,7 +9,6 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'will_paginate', '3.0.1'
 gem 'haml-rails', '0.3.4', :require => 'haml'
-gem 'passenger'
 
 gem 'rack', '1.3.3'
 

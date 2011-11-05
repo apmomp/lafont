@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111104224803) do
+ActiveRecord::Schema.define(:version => 20111105015617) do
 
   create_table "bill_lines", :force => true do |t|
     t.integer  "bill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
     t.decimal  "price",      :precision => 6, :scale => 2
+    t.integer  "name_id"
   end
 
   add_index "bill_lines", ["bill_id"], :name => "index_bill_lines_on_bill_id"
@@ -60,10 +60,15 @@ ActiveRecord::Schema.define(:version => 20111104224803) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cat_id"
-    t.boolean  "deleted",                                  :default => false
   end
 
   add_index "foods", ["cat_id"], :name => "index_foods_on_cat_id"
+
+  create_table "names", :force => true do |t|
+    t.string "name"
+  end
+
+  add_index "names", ["name"], :name => "index_names_on_name"
 
   create_table "sections", :force => true do |t|
     t.string   "name"

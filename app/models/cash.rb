@@ -1,7 +1,6 @@
 class Cash < ActiveRecord::Base
   has_many :bills, :dependent => :destroy
   has_many :lines, :class_name => "BillLine", :foreign_key => :bill_id, :through => :bills
-  has_many :foods, :through => :lines
   
   default_scope :order => 'cashes.created_at DESC'
   
