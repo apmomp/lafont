@@ -275,6 +275,10 @@ div.field, div.actions {
   font-weight: bold;
 }
 
+.textr {
+  text-align: right;
+}
+
 div.fname input {
   width: 100%;
 }

@@ -1,7 +1,8 @@
 - # encoding: utf-8
 
 .round.foodcat.float{ :class => "state#{bill.state_id.to_s}"}
-  = render 'bills/bill_head', :bill => bill, :expanded => false
+  .float.bill_head{:id => "bill_head_#{bill.id.to_s}"}
+    = render 'bills/bill_head', :bill => bill, :expanded => false
   %div{:id => "b_lines_#{bill.id.to_s}"}
     - if request.fullpath =~ edit_bill_path_regex
       = render bill.lines

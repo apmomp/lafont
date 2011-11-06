@@ -1,17 +1,16 @@
-.float.bill_head{:id => "bill_head_#{bill.id.to_s}"}
-  %h2
-    .float
-      - if request.fullpath =~ edit_bill_path_regex
-        = link_to image_tag("delete.gif"), bill, :method => :delete,
-                                                 :confirm => "¿Seguro que deseas borrar esta cuenta y todo su contenido?",
-                                                 :title => "Borrar #{bill.name}"
-      - if controller.controller_name == "bills" and controller.action_name == "index"
-        = link_to bill.name, edit_bill_path(bill)
+%h2
+  .float
+    - if request.fullpath =~ edit_bill_path_regex
+      = link_to image_tag("delete.gif"), bill, :method => :delete,
+                                               :confirm => "¿Seguro que deseas borrar esta cuenta y todo su contenido?",
+                                               :title => "Borrar #{bill.name}"
+    - if controller.controller_name == "bills" and controller.action_name =~ /(index|contract|expand)/
+      = link_to bill.name, edit_bill_path(bill)
+    - else
+      %strong #{bill.name}
+    - if not request.fullpath =~ edit_bill_path_regex
+      - if not expanded
+        = link_to (image_tag "expand.gif"), bill_expand_path(bill), :remote => true, :method => :post
       - else
-        %strong #{bill.name}
-      - if not request.fullpath =~ edit_bill_path_regex
-        - if not expanded
-          = link_to (image_tag "expand.gif"), bill_expand_path(bill), :remote => true, :method => :post
-        - else
-          = link_to (image_tag "contract.gif"), bill_contract_path(bill), :remote => true, :method => :post
+        = link_to (image_tag "contract.gif"), bill_contract_path(bill), :remote => true, :method => :post
      

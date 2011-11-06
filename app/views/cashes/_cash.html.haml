@@ -1,15 +1,20 @@
 .column3
-  = "Efectivo: #{number_with_precision(cash.incash_lines.sum(:price), :precision => 2) }€"
-  %br
-  = "Tarjeta: #{number_with_precision(cash.cr_lines.sum(:price), :precision => 2) }€"
-  %br
-  %strong
-    = "Total caja: #{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
-  %br
-  - if cash.closed?
-    = "Caja cerrada el #{l cash.closed_at}"
-  - else
-    = button_to "Cerrar caja", cash_close_path(cash), :confirm => "¿Seguro que quieres cerrar la caja?"
+  .col40
+    Efectivo:
+    %br
+    Tarjeta:
+    %br
+    Total caja:
+  .col40.textr
+    = "#{number_with_precision(cash.incash_lines.sum(:price), :precision => 2) }€"
+    %br
+    = "#{number_with_precision(cash.cr_lines.sum(:price), :precision => 2) }€"
+    %br
+    = "#{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
+    - if cash.closed?
+      = "Caja cerrada el #{l cash.closed_at}"
+    - else
+      = button_to "Cerrar caja", cash_close_path(cash), :confirm => "¿Seguro que quieres cerrar la caja?"
 - if cash and not cash.bills.nil?
   - num_bills = cash.bills.count
   - (0..1).each do |num|
