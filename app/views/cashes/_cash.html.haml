@@ -1,4 +1,8 @@
 .column3
+  = "Efectivo: #{number_with_precision(cash.incash_lines.sum(:price), :precision => 2) }€"
+  %br
+  = "Tarjeta: #{number_with_precision(cash.cr_lines.sum(:price), :precision => 2) }€"
+  %br
   %strong
     = "Total caja: #{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
   %br

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -9,9 +9,8 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'will_paginate', '3.0.1'
 gem 'haml-rails', '0.3.4', :require => 'haml'
-gem 'jquery-rails', '1.0.14'
 
-gem 'rack', '1.3.3'
+gem 'rack', '1.3.5'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
@@ -32,7 +31,7 @@ group :assets do
   gem 'uglifier'
 end
 
-#gem 'jquery-rails'
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
