@@ -12,7 +12,7 @@
     %br
     = "#{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
     - if cash.closed?
-      = "Caja cerrada el #{l cash.closed_at}"
+      = "Caja cerrada a fecha de #{l cash.closed_at}"
     - else
       = button_to "Cerrar caja", cash_close_path(cash), :confirm => "¿Seguro que quieres cerrar la caja?"
 - if cash and not cash.bills.nil?

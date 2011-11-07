@@ -1,11 +1,12 @@
 .food
-  .fname.float
-    = link_to image_tag("delete.gif"), bill_line, :method => :delete, :remote => true,
+  .col100
+    .col10
+      = link_to image_tag("delete.gif", :size => "10x10"), bill_line, :method => :delete, :remote => true,
                            :confirm => "¿Borrar #{bill_line.name}?",
                            :title => "Borrar #{bill_line.name}" unless not request.fullpath =~ edit_bill_path_regex
-    = bill_line.name
-  .fprice.float
-    #{number_with_precision(bill_line.price, :precision => 2)}€
-
-    
-
+    .col85
+      = bill_line.name
+    - if not request.fullpath =~ edit_bill_path_regex 
+      .fprice.float
+        #{number_with_precision(bill_line.price, :precision => 2)}€
+ 

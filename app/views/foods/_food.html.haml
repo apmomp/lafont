@@ -1,5 +1,8 @@
 .food
   .fname.float
+    = link_to image_tag("delete.gif"), food, :method => :delete,
+                           :confirm => "¿Borrar #{food.name}?",
+                           :title => "Borrar " + food.name unless not request.fullpath =~ /\/food_cats\/\d+\/edit/
     - if request.fullpath =~ edit_bill_path_regex
       = link_to food.name, bill_bill_lines_path(params[:id]) + "?food_id=#{food.id}",
                                                                   :class => "food_button",
@@ -8,11 +11,9 @@
                                                                   :remote => true
     - else
       = food.name
-  .fprice.float
-    #{number_with_precision(food.price, :precision => 2)}€
-    = link_to image_tag("delete.gif"), food, :method => :delete,
-                           :confirm => "¿Borrar #{food.name}?",
-                           :title => "Borrar " + food.name unless not request.fullpath =~ /\/food_cats\/\d+\/edit/
+  - if not request.fullpath =~ edit_bill_path_regex
+    .fprice.float
+      #{number_with_precision(food.price, :precision => 2)}€
 - if request.fullpath =~ /(menu|food_cats\/\d+\/edit\/?)/
   .fdesc
     = food.desc

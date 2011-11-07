@@ -115,11 +115,15 @@ li.csection {
  padding-right: 1em;
 }
 
-.column3, .column2, .column, .col5, .col10, .col15, .col20, .col25, .col30, .col35, .col40, .col45, .col50, .col55, .col60, .col65, .col70, .col75, .col80, .col85, .col90, .col95 {
+.column, .column2, .column3 {
   margin-left: 0.7em;
   margin-right: 0.7em;
   float: left;
   margin-bottom: 2em;
+}
+
+.col5, .col10, .col15, .col20, .col23, .col25, .col30, .col35, .col40, .col45, .col50, .col55, .col60, .col65, .col70, .col75, .col80, .col85, .col90, .col95, .col100 {
+  float: left;
 }
 
 .col5 {
@@ -136,6 +140,10 @@ li.csection {
 
 .col20 {
   width: 20%
+}
+
+.col23 {
+  width: 23%;
 }
 
 .col25 {
@@ -198,6 +206,10 @@ li.csection {
   width: 95%;
 }
 
+.col100 {
+  width: 100%;
+}
+
 .mar0 {
   margin-bottom: 0;
 }
@@ -225,9 +237,10 @@ div.float{
 div.foodcat{
   width: 100%;
   margin-bottom: 2em;
-  padding-left: 0.5em; 
-  padding-right: 0.5em;
+  padding-left: 0.25em; 
+  padding-right: 0.25em;
   padding-bottom: 1em;
+  border: 2px solid #666666;
 }
 
 div.foodcat h2 {
@@ -285,7 +298,8 @@ div.fname input {
 
 div#bill div{
   /*background-color: #264426;*/
-  font-size: 95%;
+  /*font-size: 95%;*/
+  font-weight: bold;
 }
 
 div.bill_head {
@@ -304,7 +318,7 @@ div.foodcat a {
   text-decoration: underline;
 }*/
 div.foodcat a:visited {
-  color: gold;
+/*  color: gold;*/
 }
 
 a.food_button {
@@ -312,6 +326,9 @@ a.food_button {
 	padding-left: 0.2em;
 	padding-right: 0.2em;
 }
+a:visited.food_button {
+  color: #ccc;
+} 
 
 a:hover.food_button {
   background: gold;
@@ -334,13 +351,51 @@ div.pay input {
 }*/
 
 div.foodcat.state2{
-  background-color: #264426;
+  background-color: #13661b;
+  color: #DDD;
 }
 
 div.foodcat.state3{
-  background-color: #224567;
+  background-color: #12538a;
+  color: #DDD;
 }
 
 div.foodcat img {
 	border: none;
 }
+
+/* margenes */
+
+.marI025 {
+  margin-left: 0.25em;
+}
+
+.marD025 {
+  margin-right: 0.25em;
+}
+
+.marI05 {
+  margin-left: 0.5em;
+}
+
+.marD05 {
+  margin-right: 0.5em;
+}
+
+.marI07 {
+  margin-left: 0.7em;
+}
+
+.marD07 {
+  margin-right: 0.7em;
+}
+
+.marI1 {
+  margin-left: 1em;
+}
+
+.marD1 {
+  margin-right: 1em;
+}
+
+

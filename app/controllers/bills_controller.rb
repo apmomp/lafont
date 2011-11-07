@@ -31,6 +31,7 @@ class BillsController < ApplicationController
     @title = "Editando #{@bill.name}"
     sec = (params[:section].nil?) ? 1 : params[:section]
     @foodcats = FoodCat.where("section_id = ?", sec)
+    @bar = FoodCat.where("section_id in(2,3)")
   end
 
   def destroy
