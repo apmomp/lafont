@@ -10,4 +10,4 @@
     .column2
       = link_to "#{l c.created_at}", c
     .column2
-      = "#{number_with_precision(c.lines.sum(:price), :precision => 2) }€"
+      = "#{number_with_precision(c.total, :precision => 2) }€"
