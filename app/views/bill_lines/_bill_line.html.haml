@@ -4,7 +4,7 @@
       = link_to image_tag("delete.gif", :size => "10x10"), bill_line, :method => :delete, :remote => true,
                            :confirm => "¿Borrar #{bill_line.name}?",
                            :title => "Borrar #{bill_line.name}" unless not request.fullpath =~ edit_bill_path_regex
-    .col85
+    .col75
       = bill_line.name
     - if not request.fullpath =~ edit_bill_path_regex 
       .fprice.float
