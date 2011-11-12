@@ -9,5 +9,7 @@ class FoodCat < ActiveRecord::Base
                    :uniqueness => { :case_sensitive => false }
 
   validates :section_id, :presence => true
+
+  default_scope :order => 'food_cats.id'
                      
 end
