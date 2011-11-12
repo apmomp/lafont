@@ -11,7 +11,7 @@
   - (0..1).each do |num|
     .col23.marI07.marD07
       - cats = (num..@foodcats.count-1).step(2).each do |cat|
-        = render @foodcats[cat], :contracted => (@foodcats[cat].name == "Suplementos") ? false : true
+        = render @foodcats[cat], :contracted => true  #(@foodcats[cat].name == "Suplementos") ? false : true
   .col23.marI07.marD07
     - @bar.each do |cat|
       = render cat, :contracted => (cat.name == "Suplementos") ? false : true
