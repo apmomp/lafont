@@ -14,4 +14,4 @@
         = render @foodcats[cat], :contracted => true  #(@foodcats[cat].name == "Suplementos") ? false : true
   .col23.marI07.marD07
     - @bar.each do |cat|
-      = render cat, :contracted => (cat.name == "Suplementos") ? false : true
+      = render cat, :contracted => true #(cat.name == "Suplementos") ? false : true
