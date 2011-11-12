@@ -6,8 +6,11 @@
   = render @cash
 .column
   %h2 Historial de cajas:
-  - @cashes.each do |c|
-    .column2
-      = link_to "#{l c.created_at}", c
-    .column2
-      = "#{number_with_precision(c.total, :precision => 2) }€"
+  - @cashes_by_month.each do |m, cashes|
+    %h3
+      = m
+    - cashes.each do |c|
+      .column2
+        = link_to "Día #{c.created_at.strftime("%d a las %R")}", c
+      .column2
+        = "#{number_with_precision(c.total, :precision => 2) }€"

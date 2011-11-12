@@ -1,20 +1,23 @@
 .column3
   .col40
-    Efectivo:
-    %br
-    Tarjeta:
-    %br
-    Total caja:
+    .col100
+      Efectivo:
+    .col100
+      Tarjeta:
+    .col100
+      Total caja:
   .col40.textr
-    = "#{number_with_precision(cash.incash_lines.sum(:price), :precision => 2) }€"
-    %br
-    = "#{number_with_precision(cash.cr_lines.sum(:price), :precision => 2) }€"
-    %br
-    = "#{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
-    - if cash.closed?
-      = "Caja cerrada a fecha de #{l cash.closed_at}"
-    - else
-      = button_to "Cerrar caja", cash_close_path(cash), :confirm => "¿Seguro que quieres cerrar la caja?"
+    .col100
+      = "#{number_with_precision(cash.incash_lines.sum(:price), :precision => 2) }€"
+    .col100
+      = "#{number_with_precision(cash.cr_lines.sum(:price), :precision => 2) }€"
+    .col100
+      = "#{number_with_precision(cash.lines.sum(:price), :precision => 2) }€"
+    .col100
+      - if cash.closed?
+        = "Caja cerrada a fecha de #{l cash.closed_at}"
+      - else
+        = button_to "Cerrar caja", cash_close_path(cash), :confirm => "¿Seguro que quieres cerrar la caja?"
 - if cash and not cash.bills.nil?
   - num_bills = cash.bills.count
   - (0..1).each do |num|
