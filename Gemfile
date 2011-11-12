@@ -11,10 +11,11 @@ gem 'will_paginate', '3.0.1'
 gem 'haml-rails', '0.3.4', :require => 'haml'
 
 gem 'rack', '1.3.5'
+gem 'pg'
+gem 'faker', '0.3.1'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
-  gem 'faker', '0.3.1'
 end
 
 group :test do
