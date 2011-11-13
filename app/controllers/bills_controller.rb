@@ -75,7 +75,7 @@ class BillsController < ApplicationController
     def opened_cash 
       if Cash.current.nil?
         c = Cash.first
-        if (not c.nil?) and c.created_at.strftime("%Y%m%d") == Time.now.strftime("%Y%m%d")
+        if (not c.nil?) and c.created_at.strftime("%Y%m%d") == Time.zone.now.strftime("%Y%m%d")
           c.closed_at = nil
           flash[:success] = "Reabierta la caja con fecha de #{l c.created_at}"
           c.save!

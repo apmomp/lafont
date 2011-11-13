@@ -12,7 +12,7 @@ class Cash < ActiveRecord::Base
   
   def self.current
     cash = Cash.first
-    if not cash.nil? and cash.created_at < Time.now and cash.closed_at == nil
+    if not cash.nil? and cash.created_at < Time.zone.now and cash.closed_at == nil
       cash
     else
       nil

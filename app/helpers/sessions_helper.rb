@@ -45,7 +45,7 @@ module SessionsHelper
   end
 
   def banned_user
-    ban = current_user.bans.where("ends_at > ?", Time.now).first
+    ban = current_user.bans.where("ends_at > ?", Time.zone.now).first
     flash[:notice] = "You are banned until " + (ban.ends_at.to_date.to_s)  + "!" unless ban.nil?
 
     ban = current_user.bans.where("ends_at IS NULL").first

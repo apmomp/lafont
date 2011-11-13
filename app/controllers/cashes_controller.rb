@@ -19,7 +19,7 @@ class CashesController < ApplicationController
   def close
     cash = Cash.find_by_id(params[:cash_id])
     if not cash.nil?
-      cash.closed_at = Time.now
+      cash.closed_at = Time.zone.now
       cash.total = cash.lines.sum(:price)
       if cash.save
         flash[:success] = "Caja cerrada con éxito"
