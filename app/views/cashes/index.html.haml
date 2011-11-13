@@ -1,16 +1,19 @@
-%h1 Cajas
+.column
+  %h1 Cajas
 
-- if not @cash.nil?
-  %h2
-    Caja de hoy
-  = render @cash
+  - if not @cash.nil?
+    %h2
+      Caja de hoy
+    = render @cash
 .column
   %h2 Historial de cajas:
-  - @cashes_by_month.each do |m, cashes|
-    %h3
-      = m
-    - cashes.each do |c|
-      .column2
-        = link_to "Día #{c.created_at.strftime("%d a las %R")}", c
-      .column2
-        = "#{number_with_precision(c.total, :precision => 2) }€"
+  .col25
+    - @cashes_by_month.each do |m, cashes|
+      .col100.cash_month.round
+        %h3
+          = "#{m} (#{number_with_precision(cashes.sum(&:total), :precision => 2)}€)"
+        - cashes.each do |c|
+          .col30
+            = link_to "Día #{c.created_at.strftime("%d")}", c
+          .col70.textr
+            = "#{number_with_precision(c.total, :precision => 2) }€"

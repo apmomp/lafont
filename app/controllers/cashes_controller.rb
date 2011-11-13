@@ -8,7 +8,7 @@ class CashesController < ApplicationController
     @cashes = Cash.all
     @cashes.delete(@cash)
 
-    @cashes_by_month = @cashes.group_by { |h_cash| h_cash.created_at.strftime("%Y %B") }
+    @cashes_by_month = @cashes.group_by { |h_cash| h_cash.created_at.strftime("%m/%Y") }
   end
   
   def show

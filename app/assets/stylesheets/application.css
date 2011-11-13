@@ -234,7 +234,7 @@ div.float{
   padding-right: 1em;
 }
 
-div.foodcat{
+div.foodcat, div.cash_month{
   width: 100%;
   margin-bottom: 2em;
   padding-left: 0.25em; 
@@ -362,6 +362,10 @@ div.foodcat.state3{
 
 div.foodcat img {
 	border: none;
+}
+
+div.cash_month {
+  background-color: #000;
 }
 
 /* margenes */
