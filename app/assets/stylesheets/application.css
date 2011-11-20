@@ -11,11 +11,12 @@ body{
   color: gold;
   font-size: 75%;
 	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+  margin-left: 0;
+  margin-top: 0;
 }
 
 .container {
   width: 750px;
-  
 }
 header {
   padding-top: 20px;
@@ -27,9 +28,15 @@ header img {
 section {
   margin-top: 1em;
   padding: 1em;
+  margin-top: 25px;
   background: #222;
   float: left;
   width: 750px;
+}
+
+section#mainsec {
+  margin-top: 0;
+  padding-top: 30px;
 }
 section h1 {
   font-size: 2em;
@@ -49,31 +56,62 @@ a:visited {
 }
 /* Navigation */
 nav {
-float: right;
+  float: right;
 }
+
 nav {
   background-color: #222;
   padding: 0 0.7em;
   white-space: nowrap;
 }
-nav ul {
+nav div.menu_item {
   margin: 0;
-  padding: 0;
+  padding: 0.2em 0;
+  float: left;
 }
-nav ul li {
+
+nav ul {
   list-style-type: none;
   display: inline-block;
-  padding: 0.2em 0;
 }
-nav ul li a {
+
+nav div.menu_item a {
   padding: 0 5px;
+  margin: 0 5px;
   font-weight: bold;
 }
-nav ul li a:visited {
+nav div.menu_item a:visited {
   color: #ccc;
 }
-nav ul li a:hover {
-  text-decoration: underline;
+nav div.menu_item a:hover {
+  background: #050505;
+  color: gold;
+  text-decoration: none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 6px;
+}
+
+nav div.ico img {
+  vertical-align: middle;
+}
+
+nav.h_menu {
+  background: url(/devassets/menu_backg.gif) repeat;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 754px;
+  font-size: 120%;
+  font-weight: bold;
+  border-bottom: 1px solid gold;
+  height: 22px;
+}
+
+nav.h_menu div.r_menu {
+  margin-left: 13em;
+  float: right;
 }
 
 .success {
@@ -226,6 +264,9 @@ li.csection {
 
 div.float{
   float: left;
+}
+div.rfloat{
+  float: right;
 }
 
 .form_black {

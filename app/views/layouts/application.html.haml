@@ -9,8 +9,8 @@
 
   %body
     .container
-      = render 'layouts/header'
-      %section.round
+      = render 'layouts/header_f'
+      %section{:id => "mainsec"}
         - flash.each do |key, value|
           =  content_tag(:div, value, :class => "round flash #{key}")
         = yield
