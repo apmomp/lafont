@@ -97,7 +97,7 @@ nav div.ico img {
 }
 
 nav.h_menu {
-  background: url(/devassets/menu_backg.gif) repeat;
+  background: url(/assets/menu_backg.gif) repeat;
   position: fixed;
   z-index: 10;
   left: 0;
