@@ -1,0 +1,23 @@
+%nav.h_menu
+  .float
+    = image_tag("lafont_logo.png")
+  .float
+    .menu_item
+      = link_to "Home", root_path
+    .menu_item
+      = link_to "Menu", menu_index_path
+    - if signed_in?
+      .menu_item
+        = link_to "Cuentas", bills_path
+      .menu_item
+        = link_to "Caja", cashes_path
+      - else
+        .menu_item
+          = link_to "Entrar", signin_path
+  - if signed_in?
+    .r_menu
+      .menu_item.ico
+        = link_to image_tag('ico_profile.png') + "Perfil", edit_user_path(current_user)
+      .menu_item.ico
+        = link_to(image_tag('ico_logout.png') + "Salir", signout_path, html_options = {:title => "Cerrar sesión #{current_user.nick}"})
+  
