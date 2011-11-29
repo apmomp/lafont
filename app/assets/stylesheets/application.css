@@ -17,6 +17,8 @@ body{
 
 .container {
   width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 header {
   padding-top: 20px;
@@ -37,6 +39,11 @@ section {
 section#mainsec {
   margin-top: 0;
   padding-top: 30px;
+  -moz-border-radius-bottomleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
 }
 section h1 {
   font-size: 2em;
@@ -100,7 +107,9 @@ nav.h_menu {
   background: url(/assets/menu_backg.gif) repeat;
   position: fixed;
   z-index: 10;
-  left: 0;
+  /*left: 0;*/
+  margin-left: auto;
+  margin-right: auto;
   top: 0;
   width: 754px;
   font-size: 120%;
@@ -158,94 +167,6 @@ li.csection {
   margin-right: 0.7em;
   float: left;
   margin-bottom: 2em;
-}
-
-.col5, .col10, .col15, .col20, .col23, .col25, .col30, .col35, .col40, .col45, .col50, .col55, .col60, .col65, .col70, .col75, .col80, .col85, .col90, .col95, .col100 {
-  float: left;
-}
-
-.col5 {
-  width: 5%;
-}
-
-.col10 {
-  width: 10%
-}
-
-.col15 {
-  width: 15%;
-}
-
-.col20 {
-  width: 20%
-}
-
-.col23 {
-  width: 23%;
-}
-
-.col25 {
-  width: 25%;
-}
-
-.col30 {
-  width: 30%;
-}
-
-.col35 {
-  width: 35%;
-}
-
-.col40{
-  width: 40%;
-}
-
-.col45{
-  width: 45%;
-}
-
-.col50 {
-  width: 50%;
-}
-
-.col55{
-  width: 55%;
-}
-
-.col60 {
-  width: 60%;
-}
-
-.col65 {
-  width: 65%;
-}
-
-.col70 {
-  width: 70%;
-}
-
-.col75 {
-  width: 75%;
-}
-
-.col80{
-  width: 80%;
-}
-
-.col85{
-  width: 85%;
-}
-
-.col90 {
-  width: 90%;
-}
-
-.col95{
-  width: 95%;
-}
-
-.col100 {
-  width: 100%;
 }
 
 .mar0 {
