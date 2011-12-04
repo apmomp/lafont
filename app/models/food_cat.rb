@@ -1,7 +1,7 @@
 class FoodCat < ActiveRecord::Base
   attr_accessible :name, :section_id
 
-  has_many :foods, :foreign_key => :cat_id
+  has_many :foods, :foreign_key => :cat_id, :dependent => :destroy
   belongs_to :section
 
   validates :name, :presence => true,

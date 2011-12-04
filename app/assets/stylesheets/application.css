@@ -11,14 +11,17 @@ body{
   color: gold;
   font-size: 75%;
 	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
-  margin-left: 0;
+  /*margin-left: 0;*/
+  margin-left: auto;
+  margin-right: auto;
+  width:750px;
   margin-top: 0;
 }
 
 .container {
-  width: 750px;
+  /*width: 750px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;*/
 }
 header {
   padding-top: 20px;
