@@ -3,7 +3,7 @@
 class FoodsController < ApplicationController
 
   def create
-    @food = Food.new(params[:food])
+    @food = Food.new(params[:food]) 
     @food.cat_id=params[:food_cat_id]
     if @food.save
       flash[:success] = "¡Comida añadida!"

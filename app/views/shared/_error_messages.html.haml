@@ -1,12 +1,12 @@
 - if object.errors.any?
   #error_explanation
     %h2
-      = pluralize(object.errors.count, "error")
-      prohibited this 
+      = pluralize(object.errors.count, "error evita", "errores evitan")
+      que este 
       = object.class.to_s.underscore.humanize.downcase
-      from being saved:
+      pueda ser guardado:
     %p
-      There were problems with the following fields:
+      Hay problemas con los siguientes campos:
     %ul
       - object.errors.full_messages.each do |msg|
         %li
